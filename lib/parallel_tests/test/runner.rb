@@ -173,6 +173,7 @@ module ParallelTests
           tests.sort!
           tests.map! do |test|
             allowed_missing -= 1 unless time = runtimes[test]
+            puts "Missing! #{test}"
             raise "Too little runtime info" if allowed_missing < 0
             [test, time]
           end
